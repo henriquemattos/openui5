@@ -1,7 +1,12 @@
-// Define image URLs to be used in control rendering code
-@_sap_ui_commons_RatingIndicator_SymbolSelected: url("img/rating/star_selected.png");
-@_sap_ui_commons_RatingIndicator_SymbolUnselected: url("img/rating/star_unselected.png");
-@_sap_ui_commons_RatingIndicator_SymbolHovered: url("img/rating/star_hover.png");
+/* =============================================== */
+/* CSS for control sap.ui.commons/RatingIndicator  */
+/* base theme                                      */
+/* =============================================== */
+
+/* Define image URLs to be used in control rendering code */
+@_sap_ui_commons_RatingIndicator_SymbolSelected: url('img/rating/star_selected.png');
+@_sap_ui_commons_RatingIndicator_SymbolUnselected: url('img/rating/star_unselected.png');
+@_sap_ui_commons_RatingIndicator_SymbolHovered: url('img/rating/star_hover.png');
 
 .sapUiRating {
 	display: inline-block;
@@ -19,7 +24,7 @@
 .sapUiRatingItm {
 	display: inline-block;
 	border: 0 none;
-	line-height: 0px;
+	line-height: 0;
 	position: relative;
 	margin-left: 1px;
 	margin-right: 1px;
@@ -28,8 +33,8 @@
 .sapUiRatingItmOvrflw {
 	display: inline-block;
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: 0;
+	right: 0;
 	width: 100%;
 	height: 100%;
 	overflow:hidden;
@@ -41,6 +46,6 @@
 
 .sapUiRatingItmOvrflw > .sapUiRatingItmOvrflwImg {
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: 0;
+	right: 0;
 }
