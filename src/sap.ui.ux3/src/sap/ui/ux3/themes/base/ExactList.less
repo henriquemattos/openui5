@@ -1,6 +1,7 @@
-/* ================================================== */
-/* Base CSS for control sap.ui.ux3/ExactList.control  */
-/* ================================================== */
+/* ===================================== */
+/* CSS for control sap.ui.ux3/ExactList  */
+/* base theme                            */
+/* ===================================== */
 
 .sapUiUx3ExactLst {
 	display: inline-block;
@@ -12,8 +13,8 @@
 
 .sapUiUx3ExactLstFoc {
 	display: inline-block;
-	width: 0px;
-	height: 0px;
+	width: 0;
+	height: 0;
 }
 
 .sapUiUx3ExactLstFoc:focus {
@@ -31,15 +32,9 @@
 	position: absolute;
 	bottom: 0;
 	top: @sapUiUx3ExactLstHeaderHeight;
-	begin: 0;
 	width: 168px;
 	border: 1px solid @sapUiMediumBorder;
 	box-sizing: border-box;
-}
-
-html[data-sap-ui-browser^="ed"] .sapUiUx3ExactLstLst,
-html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
-	left: 0;
 }
 
 .sapUiUx3ExactLstLst.sapUiUx3ExactLstExpandedBL {
@@ -89,16 +84,16 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 	display: inline-block;
 	position: absolute;
 	right: 5px;
-    height: 12px;
-    padding: 0;
-    right: 22px; /*Just a placeholder for: 5+ScrollbarWidth*/
-    top: 4px;
-    width: 12px;
-    font-weight: bold;
+	height: 12px;
+	padding: 0;
+	right: 22px; /* Just a placeholder for: 5+ScrollbarWidth */
+	top: 4px;
+	width: 12px;
+	font-weight: bold;
 }
 
 .sapUiUx3ExactLstLb > ul > .sapUiLbxI > .sapUiLbxIIco:after {
-	content: ">";
+	content: '>';
 }
 
 .sapUiUx3ExactLstLb > ul > .sapUiLbxI.sapUiUx3ExactLstNoIco > .sapUiLbxIIco {
@@ -116,10 +111,10 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 /* List - Item Texts */
 .sapUiUx3ExactLstLb.sapUiLbx > ul > .sapUiLbxI > .sapUiLbxITxt {
 	display: block;
-	margin-right: 37px; /*Just a placeholder for: 20+ScrollbarWidth*/
+	margin-right: 37px; /* Just a placeholder for: 20+ScrollbarWidth */
 	overflow: hidden;
 	text-overflow: ellipsis;
-	padding-right: 0px;
+	padding-right: 0;
 }
 
 .sapUiUx3ExactLstLst.sapUiUx3ExactLstScroll > .sapUiUx3ExactLstLb:hover > ul > .sapUiLbxI > .sapUiLbxITxt {
@@ -128,9 +123,9 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 
 /* Expander */
 .sapUiUx3ExactLstExp {
-    height: 21px;
-    cursor: pointer;
-    text-align: center;
+	height: 21px;
+	cursor: pointer;
+	text-align: center;
 }
 
 .sapUiUx3ExactLstLst > .sapUiUx3ExactLstExp {
@@ -150,8 +145,8 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 	box-sizing: border-box;
 	display: block;
 	height: @sapUiUx3ExactLstHeaderHeight;
-    line-height: @sapUiUx3ExactLstHeaderHeight;
-    border-top: 1px solid @sapUiMediumBorder;
+	line-height: @sapUiUx3ExactLstHeaderHeight;
+	border-top: 1px solid @sapUiMediumBorder;
 	border-left: 1px solid @sapUiMediumBorder;
 	border-right: 1px solid @sapUiMediumBorder;
 	position: absolute;
@@ -173,15 +168,15 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 	position: absolute;
 	left: 0;
 	right: 0;
-    font-size: 12px;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-right: 37px;
-    overflow: hidden;
-    white-space: nowrap;
-    color: @sapUiText;
-    padding-left: 6px;
-    text-overflow: ellipsis;
+	font-size: 12px;
+	margin-bottom: 0;
+	margin-top: 0;
+	margin-right: 37px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: @sapUiText;
+	padding-left: 6px;
+	text-overflow: ellipsis;
 }
 
 .sapUiUx3ExactLstHeadTopTxt {
@@ -226,7 +221,7 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 }
 
 .sapUiUx3ExactLstHeadAct.sapUiUx3ExactLstHeadActNoClose,
-.sapUiUx3ExactLstCollapsed  > .sapUiUx3ExactLstHead > .sapUiUx3ExactLstHeadAct.sapUiUx3ExactLstHeadActNoClose {
+.sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3ExactLstHeadAct.sapUiUx3ExactLstHeadActNoClose {
 	width: 14px;
 	height: 14px;
 }
@@ -236,11 +231,12 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 	display: inline-block;
 }
 
-.sapUiUx3ExactLstHide, .sapUiUx3ExactLstClose {
+.sapUiUx3ExactLstHide,
+.sapUiUx3ExactLstClose {
 	cursor: pointer;
 	outline: none;
-	-moz-user-select: none;
 	-webkit-user-select: none;
+	user-select: none;
 	width: 14px;
 	height: 14px;
 	display: inline-block;
@@ -282,24 +278,18 @@ html[data-sap-ui-browser^="ie"] .sapUiUx3ExactLstLst {
 }
 
 .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3ExactLstHeadTxt {
-	transform:rotate(270deg);
-	-moz-transform: rotate(270deg);
-	-webkit-transform:rotate(270deg);
-	-webkit-transform-origin: 0 0;
-	-ms-transform-origin: 0 0;
-	-moz-transform-origin: 0 0;
+	transform: rotate(270deg);
+	transform-origin: 0 0;
 	background-color: transparent;
 	bottom: -20px;
 	left: -1px;
 	right: auto;
 }
 
-html[dir=rtl] .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3ExactLstHeadTxt {
+html[dir='rtl'] .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3ExactLstHeadTxt {
 	bottom: 5px;
 	left: 22px; /*should be right -> swapped with right by RTL transformation*/
-	-webkit-transform-origin: 0% 100%; /*should be '100% 100%' -> swapped with right by RTL transformation*/
-	-ms-transform-origin: 0% 100%; /*should be '100% 100%' -> swapped with right by RTL transformation*/
-	-moz-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
 }
 
 /* Content */
@@ -331,7 +321,7 @@ html[dir=rtl] .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3Exac
 }
 
 .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstCntnt {
-	border-top-width: 0px;
+	border-top-width: 0;
 	margin-left: @sapUiUx3ExactLstCollapseWidth;
 }
 
@@ -342,16 +332,16 @@ html[dir=rtl] .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3Exac
 	bottom: 0;
 	left: 164px;
 	width: 8px;
-	-moz-user-select: none;
 	-webkit-user-select: none;
-    cursor: col-resize;
+	user-select: none;
+	cursor: col-resize;
 }
 
 .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstRSz {
 	display: none;
 }
 
-.sapUiUx3ExactLstRSzGhost{
+.sapUiUx3ExactLstRSzGhost {
 	position: fixed;
 	cursor: col-resize;
 	bottom: 0;
@@ -360,15 +350,14 @@ html[dir=rtl] .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3Exac
 	left: 0;
 }
 
-
 /*Top Menu*/
 .sapUiUx3ExactLstHeadTopIco {
 	position: absolute;
 	right: 2px;
 	bottom: 2px;
-    background-repeat: no-repeat;
-    height: 5px;
-    width: 5px;
+	background-repeat: no-repeat;
+	height: 5px;
+	width: 5px;
 }
 
 .sapUiUx3ExactLstTopActive.sapUiUx3ExactLstTop > .sapUiUx3ExactLstHead {
@@ -380,7 +369,7 @@ html[dir=rtl] .sapUiUx3ExactLstCollapsed > .sapUiUx3ExactLstHead > .sapUiUx3Exac
 }
 
 .sapUiUx3ExactLstTopActive.sapUiUx3ExactLstTop > .sapUiUx3ExactLstHead:hover {
-	background-color: @sapUiHighlight;
+	background-color: var(--sapHighlightColor);
 	color: @sapUiTextInverted;
 }
 
