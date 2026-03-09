@@ -1,0 +1,12 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "7ce0dec012da907c16812ee7200f1e01a6ed7930",
+        "type": "FIX",
+        "text": " sap.ui.integration.cards.CalendarContent: resolving legendItems is now correct"
+      }
+    ]
+  }
+}

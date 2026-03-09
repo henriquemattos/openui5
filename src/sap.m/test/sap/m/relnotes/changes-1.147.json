@@ -1,0 +1,67 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "2673b552ac0595b298876ed059be84070f5bb5d0",
+        "type": "FIX",
+        "text": " sap.m.ProgressIndicator: Improve sample"
+      },
+      {
+        "id": "897737ea9f87caef48b96c083177624b4ee63d1f",
+        "type": "FIX",
+        "text": " sap.m.OverfloToolbar: Sample update"
+      },
+      {
+        "id": "a6ca436d6383f0e72afeac1fb1446ce0733d380d",
+        "type": "FIX",
+        "text": " sap.m.Avatar: Suppress warnings for empty initials"
+      },
+      {
+        "id": "09f035cfc24c903df4baa3c3f771ccf48599242b",
+        "type": "FIX",
+        "text": " sap.m.StepInput: formatting is improved."
+      },
+      {
+        "id": "2d507e3a9a72ca5295d0dd6bcb4e410b5b35a0c6",
+        "type": "FIX",
+        "text": " sap.m.MultiInput: Prevent caret movement on Esc when value is already restored"
+      },
+      {
+        "id": "9c4772d3ef60a3a666b8f64d602a4f2698999223",
+        "type": "FIX",
+        "text": " sap.m.Toolbar: Update sample"
+      },
+      {
+        "id": "48d160d88a8577320137e81ed8b98d0a7c9554ea",
+        "type": "FIX",
+        "text": " sap.m.Avatar: Sample tooltip is now corrected"
+      },
+      {
+        "id": "1daf9bd1b929511df5a98f1e91d7b36942c1e076",
+        "type": "FIX",
+        "text": " SelectionPanel: Don't hide selected descriptions"
+      },
+      {
+        "id": "b764867644efdffe0587295a4d0faecf668dacca",
+        "type": "FIX",
+        "text": " sap.m.DatePicker: user input is not overwritten when value is"
+      },
+      {
+        "id": "8c9a790c7cbd8593be955103eb35e6295854d0d4",
+        "type": "FIX",
+        "text": " sap.m.Tokenizer: Prevent focus on List dummy areas in tokens popup"
+      },
+      {
+        "id": "c851dce88f1b1168f4aed43c7cac5373b5e2930c",
+        "type": "FIX",
+        "text": " sap.m.Carousel: Fixed focus management when scrollMode is set to \"VisiblePages\""
+      },
+      {
+        "id": "93aa2a10e2aa9deed8bec687ecac8fd624859a19",
+        "type": "FIX",
+        "text": " sap.m.IconTabHeader: Restore focus to overflow button after changing from \"start\" to \"end\""
+      }
+    ]
+  }
+}

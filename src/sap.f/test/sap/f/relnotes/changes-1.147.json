@@ -1,0 +1,12 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "1f09d7fe7a47fa7859b610c4e2e26d7663c49474",
+        "type": "FIX",
+        "text": " sap.f.FlexibleColumnLayout: Update sample"
+      }
+    ]
+  }
+}

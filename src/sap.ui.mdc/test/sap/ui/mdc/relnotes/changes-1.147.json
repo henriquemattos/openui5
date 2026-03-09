@@ -1,0 +1,17 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "d3fb93d64f8e6c09793ed6b83c88310bccf4ebe7",
+        "type": "FIX",
+        "text": "p13n.panels.AdaptFiltersPanel: Performance issues"
+      },
+      {
+        "id": "b32830856348335d17251e03489bf38e7fb4f486",
+        "type": "FIX",
+        "text": " Table: sorter and grouping not applied"
+      }
+    ]
+  }
+}

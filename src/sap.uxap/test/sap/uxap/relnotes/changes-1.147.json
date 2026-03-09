@@ -1,0 +1,12 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "1aee7b9d6427662e7b101207c210a062338df87a",
+        "type": "FIX",
+        "text": " sap.uxap.ObjectPageHeader: Prevent NaN actionsWidth for invisible actions"
+      }
+    ]
+  }
+}
