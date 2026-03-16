@@ -1,14 +1,16 @@
-/* ============================================= */
-/* CSS for control sap.ui.commons/Message.control */
-/* ============================================= */
-/************* Container *************/
+/* ======================================= */
+/* CSS for control sap.ui.commons/Message  */
+/* base theme                              */
+/* ======================================= */
+
+/* Container */
 .sapUiMsg {
 	height: 18px;
 	overflow: hidden;
 	white-space: nowrap;
 }
 
-/************* Inner elements *************/
+/* Inner elements */
 .sapUiMsgIcon,
 .sapUiMsgLnk,
 .sapUiMsgTxt {
@@ -18,25 +20,25 @@
 	vertical-align: middle;
 }
 
-/************* Icon *************/
+/* Icon */
 .sapUiMsgIcon {
 	padding: 0;
-	width: 18px; /* "width" with "position:center" seems more stable then "padding"... */
+	width: 18px; /* 'width' with 'position:center' seems more stable then 'padding'... */
 }
 
 .sapUiMsgIconError {
-	background: url("img/messagebar/iconError.gif") no-repeat scroll center 0px transparent;
+	background: url('img/messagebar/iconError.gif') no-repeat scroll center 0 transparent;
 }
 
 .sapUiMsgIconWarning {
-	background: url("img/messagebar/iconWarning.gif") no-repeat scroll center 0px transparent;
+	background: url('img/messagebar/iconWarning.gif') no-repeat scroll center 0 transparent;
 }
 
 .sapUiMsgIconSuccess {
-	background: url("img/messagebar/iconSuccess.gif") no-repeat scroll center 0px transparent;
+	background: url('img/messagebar/iconSuccess.gif') no-repeat scroll center 0 transparent;
 }
 
-/************* Details link *************/
+/* Details link */
 .sapUiMsgLnk {
 	padding: 0 1px;
 }
@@ -47,7 +49,7 @@
 	vertical-align: 1px;
 }
 
-/************* Short Text *************/
+/* Short Text */
 .sapUiMsgTxt {
 	color: @sapUiBaseText;
 	padding: 0 1px;
