@@ -6,6 +6,11 @@
         "id": "1f09d7fe7a47fa7859b610c4e2e26d7663c49474",
         "type": "FIX",
         "text": " sap.f.FlexibleColumnLayout: Update sample"
+      },
+      {
+        "id": "54561868471d9b3b55fa37ff20b93c89c39c0907",
+        "type": "FEATURE",
+        "text": " sap.f.DynamicPage: New experimental event breakpointChanged"
       }
     ]
   }

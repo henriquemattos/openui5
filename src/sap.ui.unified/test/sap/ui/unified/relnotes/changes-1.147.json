@@ -1,0 +1,17 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "9d1ef17782b46a5e6c458dc0844a5cf6cfee3b0d",
+        "type": "FIX",
+        "text": " sap.ui.unified.FileUploader: all style buttons are shown correct"
+      },
+      {
+        "id": "4869fe9246755fb846296f2647f1edd4a40a4bd8",
+        "type": "FIX",
+        "text": " sap.ui.unified.CalendarDateInterval: shows correct year"
+      }
+    ]
+  }
+}

@@ -3,6 +3,46 @@
     "date": "March 2026",
     "notes": [
       {
+        "id": "79d875300892f2d5a566df53c5f22a1ace258237",
+        "type": "FIX",
+        "text": " sap.m.DynamicDateRange: has correct tooltip for date/time options"
+      },
+      {
+        "id": "141d8c2dfadb705ef1845ecc072dbfc0b7ccb224",
+        "type": "FIX",
+        "text": " sap.m.DynamicDateRange: align height to content"
+      },
+      {
+        "id": "42cee4156eee974ab0f988e63c48554ac7679461",
+        "type": "FIX",
+        "text": " sap.m.ObjectListItem: invisible markers are not added to ARIA"
+      },
+      {
+        "id": "0f289312036e69f57c633422f353fcc7eb9bb727",
+        "type": "FIX",
+        "text": " sap.m.Image: inlineSVG mode now scopes IDs to prevent duplicates"
+      },
+      {
+        "id": "96f37a634f9868fbe06ca8bd8b3495d9ae8b5e58",
+        "type": "FIX",
+        "text": " We now ensure that ActionTile avoids the default link behaviour when the action buttons are clicked"
+      },
+      {
+        "id": "4fbb46f297363d9db2fa4e02717018ddaa545822",
+        "type": "FIX",
+        "text": " sap.m.ObjectMarker: focus of icon only marker is correct now"
+      },
+      {
+        "id": "a47fc8993e62504081c54f55cc8374ad79156179",
+        "type": "FIX",
+        "text": "sap.m.MultiInput: focus is now kept when icons are pressed"
+      },
+      {
+        "id": "76baa5c924655c7f8e75110e8a35a6549b89e0dc",
+        "type": "FIX",
+        "text": " sap.m.PlanningCalendar: remove redundant labelled by reference"
+      },
+      {
         "id": "2673b552ac0595b298876ed059be84070f5bb5d0",
         "type": "FIX",
         "text": " sap.m.ProgressIndicator: Improve sample"
@@ -28,6 +68,11 @@
         "text": " sap.m.MultiInput: Prevent caret movement on Esc when value is already restored"
       },
       {
+        "id": "feb8b1fb79de2d5412dd6c470c72fda7c2e3990a",
+        "type": "FIX",
+        "text": "sap.m.Tokenizer: Tokens list items type is now 'Inactive'"
+      },
+      {
         "id": "9c4772d3ef60a3a666b8f64d602a4f2698999223",
         "type": "FIX",
         "text": " sap.m.Toolbar: Update sample"
@@ -51,6 +96,11 @@
         "id": "8c9a790c7cbd8593be955103eb35e6295854d0d4",
         "type": "FIX",
         "text": " sap.m.Tokenizer: Prevent focus on List dummy areas in tokens popup"
+      },
+      {
+        "id": "8680b4e01dc47939a40cff113fe6e455ec2c2d23",
+        "type": "FIX",
+        "text": " sap.m.RadioButtonGroup: useEntireWidth property behavior is fixed"
       },
       {
         "id": "c851dce88f1b1168f4aed43c7cac5373b5e2930c",

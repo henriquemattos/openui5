@@ -1,0 +1,17 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "9fda08715f15baaf157dccc70141ef8a2dbfd4ee",
+        "type": "FIX",
+        "text": " sap.ui.test.autoWaiter: stabilize NavigationContainerWaiter flaky tests"
+      },
+      {
+        "id": "218cd79e33bfd2a657bfbdb2d916130d0d6d1cd2",
+        "type": "FEATURE",
+        "text": " OPA: rightClick property added to Press action"
+      }
+    ]
+  }
+}

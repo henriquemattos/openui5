@@ -1,0 +1,17 @@
+{
+  "1.147.0": {
+    "date": "March 2026",
+    "notes": [
+      {
+        "id": "4fbb46f297363d9db2fa4e02717018ddaa545822",
+        "type": "FIX",
+        "text": " sap.m.ObjectMarker: focus of icon only marker is correct now"
+      },
+      {
+        "id": "8680b4e01dc47939a40cff113fe6e455ec2c2d23",
+        "type": "FIX",
+        "text": " sap.m.RadioButtonGroup: useEntireWidth property behavior is fixed"
+      }
+    ]
+  }
+}
