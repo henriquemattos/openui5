@@ -1,19 +1,11 @@
-/* =============================================== */
-/* CSS for control sap.ui.commons/Splitter.control */
-/* =============================================== */
-/*
-.sapUiSplitterFocus,
-.sapUiVSplitterSecondPane:focus,
-.sapUiHSplitterSecondPane:focus,
-.sapUiVSplitterFirstPane:focus,
-.sapUiHSplitterFirstPane:focus {
-	outline: @sapUiBlackBorder dotted 1px;
-}
-*/
+/* ======================================== */
+/* CSS for control sap.ui.commons/Splitter  */
+/* base theme                               */
+/* ======================================== */
 
 .sapUiHorizontalSplitterBar:focus,
 .sapUiVerticalSplitterBar:focus {
-	outline: @sapUiHighlight dashed 1px;
+	outline: var(--sapHighlightColor) dashed 1px;
 }
 
 .sapUiVSplitterFirstPane {
@@ -21,14 +13,12 @@
 	display: inline-block;
 	vertical-align: top;
 	outline-offset: -1px;
-	/*overflow: hidden;*/
 }
 
 .sapUiHSplitterFirstPane {
 	width: 100%;
 	vertical-align: top;
 	outline-offset: -1px;
-	/*overflow: hidden;*/
 }
 
 .sapUiVSplitterSecondPane {
@@ -36,47 +26,41 @@
 	display: inline-block;
 	vertical-align: top;
 	outline-offset: -1px;
-	/*overflow: hidden;*/
 }
 
 .sapUiHSplitterSecondPane {
 	width: 100%;
 	vertical-align: top;
 	outline-offset: -1px;
-	/*overflow: hidden;*/
 }
 
 .sapUiVerticalSplitterBar {
-	background-image: url(img/splitter/splitter_vert_grip.gif);
+	background-image: url('img/splitter/splitter_vert_grip.gif');
 	background-color: darken(@sapUiBaseBG, 20);
 	background-position: center center;
 	background-repeat: no-repeat;
 	height: 100%;
 	display: inline-block;
 	vertical-align: top; /* needed to hide vertical scrollbar when all elements fit inside the pane. currently works only in FF*/
-	/*z-index:1;*/
 }
 
 .sapUiVerticalSplitterBarHidden {
 	display: none;
 	vertical-align: top; /* needed to hide vertical scrollbar when all elements fit inside the pane. currently works only in FF*/
 	height: 100%;
-	/*z-index:1;*/
 }
 
 .sapUiHorizontalSplitterBar {
-	background-image: url(img/splitter/splitter_horiz_grip.gif);
+	background-image: url('img/splitter/splitter_horiz_grip.gif');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: darken(@sapUiBaseBG, 20);
-	width:100%;
-	/*z-index:1;*/
+	width: 100%;
 }
 
 .sapUiHorizontalSplitterBarHidden {
 	display: none;
 	width:100%;
-	/*z-index:1;*/
 }
 
 .sapUiVerticalSplitterBar:hover {
@@ -90,17 +74,17 @@
 }
 
 .sapUiVSBGhost {
-	background-image: url(img/splitter/checkerboard.png);
+	background-image: url('img/splitter/checkerboard.png');
 	background-repeat: repeat;
 	position: absolute;
-	cursor:   col-resize;
+	cursor: col-resize;
 	z-index: 20;
 }
 
 .sapUiHSBGhost {
-	background-image: url(img/splitter/checkerboard.png);
+	background-image: url('img/splitter/checkerboard.png');
 	background-repeat: repeat;
 	position: absolute;
-	cursor:  row-resize;
+	cursor: row-resize;
 	z-index: 20;
 }
