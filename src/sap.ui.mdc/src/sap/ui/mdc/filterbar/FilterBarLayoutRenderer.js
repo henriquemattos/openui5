@@ -24,6 +24,7 @@ sap.ui.define([],
 			oRm.openStart("div", oFilterBar);
 			this.addRootDivClasses(oRm, oFilterBar);
 			oRm.openEnd();
+			this.renderFocusSentinel(oRm, oFilterBar);
 			this.renderToolbar(oRm, oFilterBar);
 			this.renderItems(oRm, oFilterBar);
 
@@ -41,6 +42,8 @@ sap.ui.define([],
 		FilterBarLayoutRenderer.renderToolbar = function (oRm, oFilterBar) {};
 
 		FilterBarLayoutRenderer.renderHintText = function (oRm, oFilterBar) {};
+
+		FilterBarLayoutRenderer.renderFocusSentinel = function (oRm, oFilterBar) {};
 
 		/**
 		 * @deprecated As of version 1.122 together with the content aggregation
