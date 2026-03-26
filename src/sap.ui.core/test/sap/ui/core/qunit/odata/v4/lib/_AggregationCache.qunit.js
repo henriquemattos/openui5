@@ -1880,6 +1880,7 @@ sap.ui.define([
 	iExpectedStart : 0,
 	iExpectedLength : 41
 }, {
+	iCreated : 7, // symbolic value
 	bHasGrandTotal : false,
 	iFirstLevelIndex : 21,
 	iFirstLevelLength : 1,
@@ -1984,6 +1985,7 @@ sap.ui.define([
 			oAggregationHelperMock = this.mock(_AggregationHelper),
 			oCache = _AggregationCache.create(this.oRequestor, "~", "", {}, oAggregation),
 			oCacheMock = this.mock(oCache),
+			iCreated = oFixture.iCreated ?? 0,
 			iExpectedLength = oFixture.iExpectedLength,
 			iExpectedLevel = "iLevel" in oFixture ? oFixture.iLevel : 1, // cf. createPlaceholder
 			iExpectedStart = oFixture.iExpectedStart,
@@ -2014,6 +2016,7 @@ sap.ui.define([
 			oReadResult.value.push({});
 		}
 		oReadResult.value.$count = 40;
+		oReadResult.value.$created = iCreated;
 		oReadResult.value.$inactive = 2;
 		this.mock(oCache.oTreeState).expects("getOutOfPlaceCount").withExactArgs()
 			.returns(oFixture.iOutOfPlaceCount ?? 0);
@@ -2068,12 +2071,12 @@ sap.ui.define([
 		// expect placeholders before and after real read results
 		for (let j = 0; j < iExpectedStart; j += 1) {
 			oAggregationHelperMock.expects("createPlaceholder")
-				.withExactArgs(iExpectedLevel, j, sinon.match.same(oCache.oFirstLevel))
+				.withExactArgs(iExpectedLevel, j - iCreated, sinon.match.same(oCache.oFirstLevel))
 				.returns("~placeholder~" + j);
 		}
 		for (let j = iExpectedStart + iExpectedLength; j < 42; j += 1) {
 			oAggregationHelperMock.expects("createPlaceholder").exactly(bSkipResponse ? 0 : 1)
-				.withExactArgs(iExpectedLevel, j, sinon.match.same(oCache.oFirstLevel))
+				.withExactArgs(iExpectedLevel, j - iCreated, sinon.match.same(oCache.oFirstLevel))
 				.returns("~placeholder~" + j);
 		}
 		const oHandleOutOfPlaceNodesExpectation = oCacheMock.expects("handleOutOfPlaceNodes")
