@@ -33,12 +33,14 @@ sap.ui.define([
          * The aim is to avoid extra work when searching a control by the selector - filter out some controls before running them through the matcher pipeline.
          * If the selector doesn't need this decoration, then it should include the property "skipBasic: true"
          * @param {object} oControl the control for which to generate a selector
+         * @param {object} mSelectorParts additional selector parts (e.g. ancestor, relative)
+         * @param {object} [mSettings] optional settings forwarded to _generate and _createSelectorBase
          * @returns {object|array} plain object representation of a control, or,
          * in case of multiple options for a single control property, an array of objects, or,
          * undefined if no selector could be generated
          * @private
          */
-        generate: function (oControl) {
+        generate: function (oControl, mSelectorParts, mSettings) {
             var vResult = this._generate.apply(this, arguments);
 
             if (vResult) {
@@ -51,15 +53,15 @@ sap.ui.define([
                         if (Array.isArray(vItem)) {
                             // selector has multiple parts (e.g.: composite binding)
                             return vItem.map(function (mItemPart) {
-                                return extend({}, this._createSelectorBase(oControl, mItemPart), mItemPart);
+                                return extend({}, this._createSelectorBase(oControl, mItemPart, mSettings), mItemPart);
                             }.bind(this));
                         } else {
-                            return extend({}, this._createSelectorBase(oControl, vItem), vItem);
+                            return extend({}, this._createSelectorBase(oControl, vItem, mSettings), vItem);
                         }
                     }.bind(this));
                 } else {
                     // result is a single selector
-                    return extend(this._createSelectorBase(oControl, vResult), vResult);
+                    return extend(this._createSelectorBase(oControl, vResult, mSettings), vResult);
                 }
             }
         },
@@ -80,7 +82,7 @@ sap.ui.define([
             return null;
         },
 
-        _createSelectorBase: function (oControl, mSelector) {
+        _createSelectorBase: function (oControl, mSelector, mSettings) {
             if (_ControlFinder._isControlInStaticArea(oControl)) {
                 mSelector.searchOpenDialogs = true;
             }
@@ -93,7 +95,7 @@ sap.ui.define([
                 };
                 var oView = this._getControlView(oControl);
                 if (oView) {
-                    extend(mBasic, this._getViewIdOrName(oView));
+                    extend(mBasic, this._getViewIdOrName(oView, mSettings));
                 }
                 return mBasic;
             }
@@ -130,12 +132,20 @@ sap.ui.define([
             }
         },
 
-        // returns the viewId or viewName - the first one which is unique - or empty object if neither is unique
-        _getViewIdOrName: function (oView) {
+        /**
+         * Returns the viewId or viewName - the first one which is unique - or empty object if neither is unique
+         * @param {object} oView the view to examine
+         * @param {object} [mSettings] optional settings
+         * @param {boolean} [mSettings.preferViewNameAsViewLocator=false] if true, always use viewName instead of viewId
+         * @returns {object} object with viewName and/or viewId, or empty object
+         * @private
+         */
+        _getViewIdOrName: function (oView, mSettings) {
             var sViewId = oView.getId();
             var sViewName = oView.getViewName();
+            var bPreferViewName = mSettings && mSettings.preferViewNameAsViewLocator;
 
-            if (ManagedObjectMetadata.isGeneratedId(sViewId)) {
+            if (bPreferViewName || ManagedObjectMetadata.isGeneratedId(sViewId)) {
                 var aViewsWithSameName = UI5ElementRegistry.filter(function (oElement) {
                     return oElement instanceof View;
                 }).filter(function (oElement) {

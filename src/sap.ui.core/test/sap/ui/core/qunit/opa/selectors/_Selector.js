@@ -205,4 +205,46 @@ sap.ui.define([
 		assert.ok(!mSelector.viewId, "myView", "Should not add generated view ID");
 		assert.ok(!mSelector.viewName, "myView", "Should not add non-unique view name");
 	});
+
+	QUnit.module("_Selector - preferViewNameAsViewLocator", {
+		beforeEach: function (assert) {
+			return XMLView.create({
+				id: "stableView",
+				definition:
+					'<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" viewName="my.stable.View">' +
+					'<App id="myApp"><Page id="page1"><Input id="myInput"></Input></Page></App>' +
+					'</mvc:View>'
+			}).then(function(oView) {
+				this.oView = oView.placeAt("qunit-fixture");
+				this.oInput = this.oView.byId("myInput");
+				return nextUIUpdate();
+			}.bind(this), function(oErr) {
+				assert.strictEqual(oErr, undefined, "failed to load view");
+			});
+		},
+		afterEach: function () {
+			this.oView.destroy();
+		}
+	});
+
+	QUnit.test("Should use viewName in base decoration when preferViewNameAsViewLocator is true", function (assert) {
+		singleStub.returns({
+			property: "value"
+		});
+		var oSelector = new SingleSelector();
+		var mSelector = oSelector.generate(this.oInput, undefined, { preferViewNameAsViewLocator: true });
+		assert.strictEqual(mSelector.viewName, "my.stable.View", "Should have viewName");
+		assert.ok(!mSelector.viewId, "Should not have viewId");
+		assert.strictEqual(mSelector.controlType, "sap.m.Input", "Should still have controlType");
+	});
+
+	QUnit.test("Should use viewId in base decoration by default", function (assert) {
+		singleStub.returns({
+			property: "value"
+		});
+		var oSelector = new SingleSelector();
+		var mSelector = oSelector.generate(this.oInput);
+		assert.strictEqual(mSelector.viewId, "stableView", "Should have viewId");
+		assert.strictEqual(mSelector.viewName, "my.stable.View", "Should have viewName");
+	});
 });
