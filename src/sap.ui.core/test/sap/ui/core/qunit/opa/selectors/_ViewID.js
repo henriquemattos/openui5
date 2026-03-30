@@ -91,6 +91,78 @@ sap.ui.define([
 			}).finally(fnDone);
 	});
 
+	QUnit.test("Should generate selector with viewName (not viewId) when preferViewNameAsViewLocator is true", function (assert) {
+		var fnDone = assert.async();
+		_ControlSelectorGenerator._generate({
+			control: Element.closestTo("#myView form input"),
+			includeAll: true,
+			settings: { preferViewNameAsViewLocator: true }
+		}).then(function (aSelector) {
+			var mViewIdSelector = aSelector[1][0];
+			assert.strictEqual(mViewIdSelector.viewName, "myView", "Should use viewName as locator");
+			assert.ok(!mViewIdSelector.viewId, "Should not include viewId");
+			assert.strictEqual(mViewIdSelector.id, "mySearch", "Should have relative ID");
+		}).finally(fnDone);
+	});
+
+	QUnit.test("Should still generate selector with viewId when preferViewNameAsViewLocator is false", function (assert) {
+		var fnDone = assert.async();
+		_ControlSelectorGenerator._generate({
+			control: Element.closestTo("#myView form input"),
+			includeAll: true,
+			settings: { preferViewNameAsViewLocator: false }
+		}).then(function (aSelector) {
+			var mViewIdSelector = aSelector[1][0];
+			assert.strictEqual(mViewIdSelector.viewId, "myView", "Should use viewId as locator");
+			assert.ok(!mViewIdSelector.viewName, "Should not include viewName");
+		}).finally(fnDone);
+	});
+
+	QUnit.test("Should generate selector for private sub-control with hyphen in ID when preferViewNameAsViewLocator is true", function (assert) {
+		var fnDone = assert.async();
+		// page1-intHeader is a private sub-control of the Page; its view-relative ID contains a hyphen
+		var oInternalHeader = Element.closestTo(document.getElementById("myView--page1-intHeader"));
+		_ControlSelectorGenerator._generate({
+			control: oInternalHeader,
+			includeAll: true,
+			settings: { preferViewNameAsViewLocator: true }
+		}).then(function (aSelector) {
+			// _GlobalID is at index 0; _ViewID is at index 1
+			var mViewIdSelector = aSelector[1][0];
+			assert.strictEqual(mViewIdSelector.viewName, "myView", "Should use viewName as locator");
+			assert.strictEqual(mViewIdSelector.id, "page1-intHeader", "Should include sub-control with hyphen in ID");
+			assert.ok(!mViewIdSelector.viewId, "Should not include viewId");
+		}).finally(fnDone);
+	});
+
+	QUnit.test("Should not generate selector for private sub-control with hyphen in ID by default", function (assert) {
+		var fnDone = assert.async();
+		var oInternalHeader = Element.closestTo(document.getElementById("myView--page1-intHeader"));
+		_ControlSelectorGenerator._generate({
+			control: oInternalHeader,
+			includeAll: true,
+			shallow: true
+		}).then(function (aSelector) {
+			assert.ok(!hasViewIdSelector(aSelector), "Should not generate selector for sub-control with hyphen");
+		}).finally(fnDone);
+	});
+
+	QUnit.test("Should generate selector with viewName when preferViewNameAsViewLocator is true and view ID is generated", function (assert) {
+		var fnDone = assert.async();
+		var $view = $(".sapUiView").filter(function (i, $elem) {
+			return $elem.id !== "myView";
+		});
+		_ControlSelectorGenerator._generate({
+			control: $view[0] ? Element.closestTo($view[0].querySelector("form input")) : undefined,
+			includeAll: true,
+			settings: { preferViewNameAsViewLocator: true }
+		}).then(function (aSelector) {
+			var mViewIdSelector = aSelector[0][0];
+			assert.strictEqual(mViewIdSelector.viewName, "myViewWithoutId", "Should use viewName");
+			assert.ok(!mViewIdSelector.viewId, "Should not include viewId");
+		}).finally(fnDone);
+	});
+
 	function createViewContent (sViewName) {
 		return '<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" viewName="' + sViewName + '">' +
 			'<App id="myApp">' +

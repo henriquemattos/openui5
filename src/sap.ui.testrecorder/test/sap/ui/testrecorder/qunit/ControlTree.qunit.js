@@ -522,6 +522,16 @@ sap.ui.define([
 		}.bind(this)).finally(fnDone);
 	});
 
+	QUnit.test("Should enable preferViewNameAsViewLocator for selector generation", function (assert) {
+		var fnDone = assert.async();
+		ControlTree.getControlData("container").then(function () {
+			assert.ok(this.fnGenerateSelector.calledOnce, "ControlSelectorGenerator.getSelector was called");
+			var mSettings = this.fnGenerateSelector.firstCall.args[0].settings;
+			assert.strictEqual(mSettings.preferViewNameAsViewLocator, true,
+				"preferViewNameAsViewLocator should be enabled for ControlTree selectors");
+		}.bind(this)).finally(fnDone);
+	});
+
 	// --- getControlData Tests ---
 	QUnit.module("ControlTree - getControlData() - Basic Functionality", {
 		beforeEach: function () {
