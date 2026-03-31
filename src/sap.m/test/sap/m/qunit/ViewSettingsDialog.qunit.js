@@ -3983,7 +3983,7 @@ sap.ui.define([
 			aFilteredItems,
 			searchFieldAriaId,
 			searchFieldAriaText,
-			expectedText = this.oResourceBundle.getText('VIEWSETTINGS_SEARCHFIELD_ARIA', this.oVSD._filterList.getItems()[1].data("item").getText());
+			expectedText = this.oResourceBundle.getText('VIEWSETTINGS_SEARCHFIELD_ARIA', [this.oVSD._filterList.getItems()[1].data("item").getText()]);
 
 		function openAndNavigateToFilterDetailsPage(oVSD) {
 			oVSD.open("filter");
@@ -4017,7 +4017,7 @@ sap.ui.define([
 		aFilteredItems = this.oVSD._filterDetailList.getItems().filter(fnIsVisible);
 
 		// Assert
-		assert.equal(oAnnounceSpy.args[0][0], this.oResourceBundle.getText('VIEWSETTINGS_FOUND_RESULTS', aFilteredItems.length), "Number of the found items should be announced.");
+		assert.equal(oAnnounceSpy.args[0][0], this.oResourceBundle.getText('VIEWSETTINGS_FOUND_RESULTS', [aFilteredItems.length]), "Number of the found items should be announced.");
 
 		//cleanup
 		oAnnounceSpy.restore();
