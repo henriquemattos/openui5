@@ -1,7 +1,22 @@
 {
   "1.147.0": {
-    "date": "March 2026",
+    "date": "April 2026",
     "notes": [
+      {
+        "id": "416c24ac3c01d21b4bdb068156d045b27ce8683c",
+        "type": "FIX",
+        "text": " mdc.Table: Restore missing row count for the TreeTable type"
+      },
+      {
+        "id": "8f0d1149a522bc2ced816809ea63d7286b73dfb5",
+        "type": "FIX",
+        "text": " FieldBase: fix issue when searching for string including ()."
+      },
+      {
+        "id": "43ecad58b9f156490da4dc5ef46d6fcc6a44477f",
+        "type": "FIX",
+        "text": " FilterBar: Empty, NotEmpty - incorrect result"
+      },
       {
         "id": "ca40cf044cb97b10ace8b07ab71e25ec3f9a653d",
         "type": "FIX",

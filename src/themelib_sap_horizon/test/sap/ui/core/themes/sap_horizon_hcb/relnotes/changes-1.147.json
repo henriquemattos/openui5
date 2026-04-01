@@ -1,7 +1,12 @@
 {
   "1.147.0": {
-    "date": "March 2026",
+    "date": "April 2026",
     "notes": [
+      {
+        "id": "9e38dfb91fec5ad3c49bee3e999dc5923822a8f6",
+        "type": "FIX",
+        "text": " Integration Cards: Fix AvatarGroup overflow in Object Card"
+      },
       {
         "id": "a823c2b74135e8a64f1101db273e1b76d44c10a7",
         "type": "FIX",

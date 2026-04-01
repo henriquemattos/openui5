@@ -1,7 +1,12 @@
 {
   "1.147.0": {
-    "date": "March 2026",
+    "date": "April 2026",
     "notes": [
+      {
+        "id": "8c5b38f888d5a4a54668286390dd21953c857a65",
+        "type": "FIX",
+        "text": " src/sap.ui.core/src/sap/ui/model/Model#requestFailed: Fix JSDoc for statusCode parameter"
+      },
       {
         "id": "8e0cf63fa0e4cb4bbe0ccaacf131c4aa05215806",
         "type": "FIX",

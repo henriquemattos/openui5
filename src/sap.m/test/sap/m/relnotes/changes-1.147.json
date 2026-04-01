@@ -1,7 +1,47 @@
 {
   "1.147.0": {
-    "date": "March 2026",
+    "date": "April 2026",
     "notes": [
+      {
+        "id": "473c38f562d59baf597a210658362b2ca22b60b8",
+        "type": "FIX",
+        "text": " sap.m.PlanningCalendar: startDateChange is fired after updating"
+      },
+      {
+        "id": "6b97ecc958476d633a04867b92b732f8000e5880",
+        "type": "FIX",
+        "text": " sap.m.TimePicker: Preserve raw input when formatting fails in TimePicker"
+      },
+      {
+        "id": "501cb42ffa7fe2b32ddfcc7b264cb8b1379b9cb3",
+        "type": "FIX",
+        "text": " sap.m.MenuButton: Sets 'button' type to the internal buttons"
+      },
+      {
+        "id": "7c8a1289f35750c72e369ba28601db1850d77e20",
+        "type": "FIX",
+        "text": " We've now added InvisibleMessage for screen reader navigation announcements in upload set with table"
+      },
+      {
+        "id": "384a0572d1083a100adcd42447c876dec3134cee",
+        "type": "FIX",
+        "text": " Added InvisibleMessage for screen reader navigation announcements"
+      },
+      {
+        "id": "82a13190e315d91eb2cf1a862f1ae2eb6f1ede75",
+        "type": "FIX",
+        "text": " Added InvisibleMessage for screen reader navigation announcements"
+      },
+      {
+        "id": "649bcb091a3ad1c14652917d8cf1214070856a92",
+        "type": "FIX",
+        "text": " sap.m.ViewSettingsDialog: Search field aria-labelledby"
+      },
+      {
+        "id": "de262b7fb1ddaad801538c46e4d53c535e81597d",
+        "type": "FIX",
+        "text": " sap.m.Tokenizer: Fix unstable qUnit tests"
+      },
       {
         "id": "0acf36a75184319a7177aba6098225539774e17a",
         "type": "FIX",
